@@ -12,7 +12,13 @@ public class LogHandler {
     private final static Log logger = LogFactory.getLog(Parser.class);
 
     public static void main(String[] args) {
+        if (args == null || args.length != 1) {
+            logger.error("Arguments should be in the format --args='<File>'.");
+            throw new IllegalArgumentException("Please check the arguments and run again.");
+        }
+
         String file = args[0];
+
         try {
             BufferedReader reader = new BufferedReader(new FileReader(file));
 
