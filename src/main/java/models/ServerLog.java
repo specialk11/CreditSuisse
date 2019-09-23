@@ -23,6 +23,9 @@ public class ServerLog {
         return this.type;
     }
 
+    public String getState() {
+        return this.state;
+    }
 
     public static class Builder {
         private final String id;

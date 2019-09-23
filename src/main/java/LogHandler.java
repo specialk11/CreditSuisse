@@ -11,26 +11,19 @@ import java.sql.SQLException;
 public class LogHandler {
     private final static Log logger = LogFactory.getLog(Parser.class);
 
-
     public static void main(String[] args) {
         String file = args[0];
-
         try {
             BufferedReader reader = new BufferedReader(new FileReader(file));
 
             DAO dao = new DAO();
-            logger.info("Creating Events table");
             dao.createEventsTable();
 
-            Parser parser = new Parser();
             logger.debug("Parsing file <" + file + "> for events.");
+            Parser parser = new Parser();
             parser.parseLogs(reader, dao);
 
-            // The code below will allow you to see events in the DB as well as clear all items.
-            logger.debug("Retrieving all DB entries in Events table.");
             dao.selectAll();
-
-            logger.warn("Deleting all entries in DB.");
             dao.deleteAll();
             dao.closeDatabase();
         } catch (IOException e) {

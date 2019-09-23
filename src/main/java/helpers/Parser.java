@@ -7,8 +7,6 @@ import models.ServerLog;
 import java.io.*;
 import java.sql.SQLException;
 import java.util.HashMap;
-import java.lang.*;
-
 
 public class Parser {
     public void parseLogs(BufferedReader reader, DAO dao) throws IOException, SQLException {
@@ -22,6 +20,7 @@ public class Parser {
                 eventMap.put(eventId, log);
                 continue;
             }
+
             ServerLog previousLog = eventMap.remove(eventId);
             long duration = Math.abs(log.getTimeStamp() - previousLog.getTimeStamp());
             boolean alert = false;
@@ -33,7 +32,6 @@ public class Parser {
                     .withHost(log.getHost())
                     .withType(log.getType())
                     .build();
-
             dao.writeEvent(event);
         }
     }
