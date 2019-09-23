@@ -7,8 +7,6 @@ You can check for these requirements by using the commands:
 
 ```gradle -v```
 
-& 
-
 ```java -version```
 
 If they are not already installed please go to the [link](https://www.tutorialspoint.com/gradle/gradle_installation.htm) 
