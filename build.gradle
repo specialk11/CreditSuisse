@@ -15,7 +15,11 @@ dependencies {
     compile 'log4j:log4j:1.2.17'
     compile 'commons-logging:commons-logging:1.2'
     compile group: 'org.hsqldb', name: 'hsqldb', version: '2.3.2'
-    testImplementation 'junit:junit:4.12'
+    testCompile group: 'org.mockito', name: 'mockito-core', version: '2.1.0'
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.powermock:powermock:1.6.5'
+    testCompile 'org.powermock:powermock-module-junit4:1.6.5'
+    testCompile 'org.powermock:powermock-api-mockito:1.6.5'
 }
 
 test {

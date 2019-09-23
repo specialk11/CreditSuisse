@@ -37,9 +37,7 @@ Logging output from the program can be found in Logs.txt
 * Since I am using log4j for logging I went ahead and assumed that the **log4j.properties** file in **main/resources** 
 would set the logging mode automatically based on the server, i.e. Test would be DEBUG etc.
 
-* I didn't have the time to implement unit tests for the code that I have written but I figured that it would be better 
-to get a fully implemented working version completed as opposed to it not working at all but each line being covered by 
-unit tests.
+* I added some sample tests to the program but I didn't have the time to fully finish all of them.
 
 * I have implemented the code in such a way that all errors from below are bubbled up to the top level and logged there,
 in practice I would have set up a global error handler for handling errors but as time was short I decided that would be
