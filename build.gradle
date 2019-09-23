@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    implementation 'com.google.code.gson:gson:2.8.5'
+    compile 'log4j:log4j:1.2.17'
+    compile 'commons-logging:commons-logging:1.2'
+    compile group: 'org.hsqldb', name: 'hsqldb', version: '2.3.2'
+    testImplementation 'junit:junit:4.12'
+}
+
+test {
+    useJUnit()
+
+    maxHeapSize = '1G'
+}
+
+mainClassName = "LogHandler"
